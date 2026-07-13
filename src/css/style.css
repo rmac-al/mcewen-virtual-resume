@@ -1126,18 +1126,22 @@ header {
   }
   
   .avatar-panel {
-    height: 50vh;
-    min-height: 400px;
+    height: auto;
+    min-height: 50vh;
     border-right: none;
     border-bottom: 1px solid rgba(189, 0, 255, 0.15);
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
   }
 
   .candidate-highlight-card {
     position: relative;
-    top: 15px;
-    left: 15px;
-    right: 15px;
+    top: 0;
+    left: 0;
+    right: 0;
     width: calc(100% - 30px);
+    margin: 15px auto;
     flex-direction: column;
     text-align: center;
     padding: 12px;
@@ -1155,14 +1159,21 @@ header {
     margin-top: 10px;
   }
 
+  .portrait-container {
+    position: relative;
+    height: auto;
+    flex: 1;
+    margin-top: 10px;
+  }
+
   .portrait-frame {
-    margin-top: 20px;
+    margin-top: 0;
     width: 200px;
     height: 240px;
   }
 
   .visualizer-rings {
-    transform: scale(0.7);
+    transform: scale(0.6);
   }
   
   .content-panel {
