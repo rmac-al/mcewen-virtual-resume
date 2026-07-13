@@ -1480,3 +1480,94 @@ header {
 
 
 
+/* RESPONSIVE LAYOUT (Mobile & Tablets) */
+@media (max-width: 1024px) {
+  body {
+    overflow-y: auto;
+    height: auto;
+  }
+  
+  .logo {
+    font-size: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  header {
+    padding: 10px 15px;
+    height: auto;
+    min-height: 70px;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .candidate-quickinfo {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .dashboard-container {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+  
+  .avatar-panel {
+    height: auto;
+    min-height: 50vh;
+    border-right: none;
+    border-bottom: 1px solid rgba(189, 0, 255, 0.15);
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+  }
+
+  .candidate-highlight-card {
+    position: relative !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: calc(100% - 30px) !important;
+    margin: 15px auto !important;
+    flex-direction: column;
+    text-align: center;
+    padding: 12px;
+  }
+
+  .candidate-quick-contact {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .candidate-header-widgets {
+    margin-left: 0;
+    justify-content: center;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .portrait-container {
+    position: relative !important;
+    height: auto !important;
+    flex: 1;
+    margin-top: 10px;
+  }
+
+  .portrait-frame {
+    margin-top: 0 !important;
+    width: 200px;
+    height: 240px;
+  }
+
+  .visualizer-rings {
+    transform: scale(0.6);
+  }
+  
+  .content-panel {
+    height: auto;
+  }
+  
+  .chat-container {
+    height: 60vh;
+  }
+}
