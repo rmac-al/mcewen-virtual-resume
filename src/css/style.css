@@ -1101,11 +1101,23 @@ header {
   }
   
   .logo {
-    font-size: 1.1rem;
+    font-size: 1rem;
+    flex-wrap: wrap;
   }
   
   header {
-    padding: 0 20px;
+    padding: 10px 15px;
+    height: auto;
+    min-height: 70px;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .candidate-quickinfo {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
   }
   
   .dashboard-container {
@@ -1114,9 +1126,43 @@ header {
   }
   
   .avatar-panel {
-    height: 45vh;
+    height: 50vh;
+    min-height: 400px;
     border-right: none;
     border-bottom: 1px solid rgba(189, 0, 255, 0.15);
+  }
+
+  .candidate-highlight-card {
+    position: relative;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    width: calc(100% - 30px);
+    flex-direction: column;
+    text-align: center;
+    padding: 12px;
+  }
+
+  .candidate-quick-contact {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .candidate-header-widgets {
+    margin-left: 0;
+    justify-content: center;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .portrait-frame {
+    margin-top: 20px;
+    width: 200px;
+    height: 240px;
+  }
+
+  .visualizer-rings {
+    transform: scale(0.7);
   }
   
   .content-panel {
@@ -1124,7 +1170,7 @@ header {
   }
   
   .chat-container {
-    height: 50vh;
+    height: 60vh;
   }
 }
 

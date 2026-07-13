@@ -619,25 +619,30 @@ function populateVoiceDropdown(voices) {
 
   // Find the best voice candidate if none is stashed
   if (!ttsState.voiceName && voices.length > 0) {
-    // 1. Try to find a younger-sounding British English (en-GB) female voice first (Libby, Sonia, Google UK Female)
-    let bestVoice = voices.find(v => (v.lang === 'en-GB' || v.lang === 'en_GB') && (v.name.includes('Libby') || v.name.includes('Sonia') || v.name.includes('Google UK English Female') || v.name.includes('Natural') || v.name.includes('Online')));
+    // 1. Try to find a younger-sounding British English (en-GB) female voice first (Libby, Sonia, Google UK Female, iOS Martha/Moira/Serena)
+    let bestVoice = voices.find(v => (v.lang === 'en-GB' || v.lang === 'en_GB') && (v.name.includes('Female') || v.name.includes('Libby') || v.name.includes('Sonia') || v.name.includes('Google UK English Female') || v.name.includes('Martha') || v.name.includes('Moira') || v.name.includes('Serena')));
     
-    // Fallback to offline UK voices (Hazel, George, Susan, etc.) if online natural ones are not available
+    // 2. Fallback to US Female voices (Samantha is common on iOS, Zira on Windows)
     if (!bestVoice) {
-      bestVoice = voices.find(v => v.lang === 'en-GB' || v.lang === 'en_GB' || v.name.toLowerCase().includes('uk') || v.name.toLowerCase().includes('great britain') || v.name.toLowerCase().includes('hazel') || v.name.toLowerCase().includes('george') || v.name.toLowerCase().includes('susan'));
+      bestVoice = voices.find(v => (v.lang === 'en-US' || v.lang === 'en_US') && (v.name.includes('Female') || v.name.includes('Samantha') || v.name.includes('Zira') || v.name.includes('Victoria')));
     }
     
-    // 2. Fallback to US English (en-US)
+    // 3. Fallback to offline UK voices if no preferred female is found
     if (!bestVoice) {
-      bestVoice = voices.find(v => v.lang === 'en-US' || v.lang === 'en_US' || v.name.toLowerCase().includes('us') || v.name.toLowerCase().includes('david') || v.name.toLowerCase().includes('zira'));
+      bestVoice = voices.find(v => v.lang === 'en-GB' || v.lang === 'en_GB' || v.name.toLowerCase().includes('uk') || v.name.toLowerCase().includes('hazel'));
     }
     
-    // 3. Fallback to any English voice
+    // 4. Fallback to any US voice
+    if (!bestVoice) {
+      bestVoice = voices.find(v => v.lang === 'en-US' || v.lang === 'en_US');
+    }
+    
+    // 5. Fallback to any English voice
     if (!bestVoice) {
       bestVoice = voices.find(v => v.lang.startsWith('en'));
     }
     
-    // 4. Fallback to first voice
+    // 6. Fallback to first voice
     if (!bestVoice) {
       bestVoice = voices[0];
     }

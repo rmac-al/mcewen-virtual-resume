@@ -148,7 +148,7 @@ export async function analyzeJobFit(jobDescription) {
   try {
     const prompt = `Analyze this job description against Robert McEwen's resume.
 Provide the response STRICTLY as a JSON object with this exact format, with no markdown formatting or extra text:
-{"score": 85, "pitch": "A short 2-3 sentence pitch written in the first person ('I') explaining why my background makes me a great fit.", "matches": ["Skill 1", "Skill 2", "Skill 3"], "gaps": ["Gap 1", "Gap 2"]}`;
+{"score": 85, "pitch": "A short 2-3 sentence pitch written in the third person ('He') explaining why Robert's background makes him a great fit.", "matches": ["Skill 1", "Skill 2", "Skill 3"], "gaps": ["Gap 1", "Gap 2"]}`;
     
     const response = await generateGeminiResponse(prompt, jobDescription);
     
